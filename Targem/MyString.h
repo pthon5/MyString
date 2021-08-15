@@ -16,10 +16,10 @@ public:
 	MyString operator + (const MyString& other);
 	MyString operator + (const char* chr);
 	friend std::ostream& operator << (std::ostream& os, const MyString& st);
-	friend std::istream& operator >> (std::istream& in, const MyString& st);
+	friend std::istream& operator >> (std::istream& in, MyString& st);
 
 	friend std::ostream& operator << (std::ostream& os, const MyString* st);
-	friend std::istream& operator >> (std::istream& in, const MyString* st);
+	friend std::istream& operator >> (std::istream& in, MyString* st);
 	// Деструктор
 	~MyString();
 private:

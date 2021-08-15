@@ -4,37 +4,33 @@
 #include <iostream>
 #include "MyString.h"
 #include <vector>
-#include <string>
+#include <set>
 
 using std::vector;
-using std::string;
+using std::multiset;
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
 	
-
 	int num = 0;
 	std::cout << "Сколько строк считывать?";
 	std::cin >> num;
 
-	//vector<MyString*>* vec_str = new vector<MyString*>;
-	
-	MyString* st = new MyString;
-	std::cin >> st;
+	multiset<MyString*>* set_str = new multiset<MyString*>;
 
-	/*for (int i = 0; i < num; i++) {
+	for (int i = 0; i < num; i++) {
 		std::cout << "Введите строку:" << std::endl;
-		MyString* st();
+		MyString* st = new MyString;
 		std::cin >> st;
-		vec_str->push_back(st);
-	}*/
+		set_str->insert(st);
+	}
 
 	std::cout << "Введённые строки:" << std::endl;
 
-	/*for (MyString* ms : *vec_str) {
+	for (MyString* ms : *set_str) {
 		std::cout << ms << std::endl;
-	}*/
+	}
 
 	return 0;
 }

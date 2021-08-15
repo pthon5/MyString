@@ -181,8 +181,11 @@ std::ostream& operator<<(std::ostream& os, const MyString& st)
 }
 
 // Оператор перенаправления потока
-std::istream& operator>>(std::istream& in, const MyString& st)
+std::istream& operator>>(std::istream& in, MyString& st)
 {
+	if (st.str == nullptr) {
+		st.str = new char;
+	}
 	in >> st.str;
 	return in;
 }
@@ -193,8 +196,11 @@ std::ostream& operator<<(std::ostream& os, const MyString* st)
 	return os;
 }
 
-std::istream& operator>>(std::istream& in, const MyString* st)
+std::istream& operator>>(std::istream& in, MyString* st)
 {
+	if (st->str == nullptr) {
+		st->str = new char;
+	}
 	in >> st->str;
 	return in;
 }
